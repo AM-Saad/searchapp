@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://kit.fontawesome.com/c735762739.js"></script>
+
+  <link rel="stylesheet" href="/css/classes.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/result.css" />
+
+  <title>Search Collector</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="search-form ">
+      <div class="search-form_wrapper">
+        <form action="/search" method="post">
+          <div class="flex">
+            <input type="text" name="searchQuery" id="search" required />
+            <button type="submit">Search</button>
+          </div>
+          <div class="check-boxs flex">
+            <div>
+              <label for="video">Youtube</label>
+              <input type="checkbox" name="video" id="video" />
+            </div>
+            <div>
+              <label for="document">Google</label>
+
+              <input type="checkbox" name="document" id="document" />
+
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="output">
+      <p>We've found <b>
+          <%=events.length%>
+        </b> result for <b>
+          <%=query%>
+        </b></p>
+      <% if( events.length> 0 ){ %>
+        <ul>
+          <% events.forEach(e=>{ %>
+            <li>
+              <% if(e.type=='document' ){ %>
+                <a href="">
+                  <%=e.href%>
+                </a>
+                <%}%>
+                  <a href="<%= e.href %>">
+                    <h2>
+                      <%= e.title %>
+                    </h2>
+                  </a>
+                  <p class="badage">
+                    <%if(e.type=='video' ){ %>
+                      <i class="fas fa-video"></i>
+                      <%}%>
+                        <%if(e.type=='document' ){ %>
+                          <i class="fas fa-file-alt"></i>
+                          <%}%>
+                  </p>
+
+            </li>
+            <% }); %>
+        </ul>
+        <% }%>
+    </div>
+    <p class="footer-copyright">Designed and developed by <a class="c-w" href="https://amsstudio.me">AMS-Studio</a> </p>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="/css/classes.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+  <title>Search Collector</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="search-form ">
+      <div class="search-form_wrapper">
+        <h1>Search Collector</h1>
+        <p>Find the most valuble search result </p>
+        <form action="/search" method="post">
+          <div class="flex">
+            <input type="text" name="searchQuery" id="search" required />
+            <button type="submit">Search</button>
+          </div>
+          <div class="check-boxs flex">
+            <div>
+              <label for="video">Youtube</label>
+              <input type="checkbox" name="video" id="video" />
+            </div>
+            <div>
+              <label for="document">Google</label>
+              
+              <input type="checkbox" name="document" id="document" />
+
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <p class="footer-copyright">Designed and developed by <a class="c-w"
+        href="https://amsstudio.me">AMS-Studio</a> </p>
+  </div>
+  <div class="loader none">
+    <div class="loader-inner loading">
+      <div class="loading-box">
+        <div class="circular-loader">
+        </div>
+        <div class="error-cross"></div>
+        <div class="loader-message"></div>
+        <div class="loader-result-control">
+        </div>
+      </div>
+    </div>
+
+    <div class="testing-controls none">
+      <button class="btn success-test">Success Modal</button>
+      <button class="btn loading-test">Full Screen Loading</button>
+      <button class="btn error-test">Error Modal</button>
+    </div>
+  </div>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+  <script src="loader.js"></script>
+</body>
+
+</html>
