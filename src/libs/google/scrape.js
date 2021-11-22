@@ -4,7 +4,7 @@ module.exports = async page => {
     try {
         const news = await page.$eval('#center_col', parseNews);
         console.log(2);
-        const events = news.map(e => Event('google', e.title, e.href, e.description));
+        const events = news.map(e => Event('google', e.title, e.href));
         return events;
         
     } catch (error) {
@@ -22,7 +22,6 @@ const parseNews = element => {
         return {
             title: a.text,
             href: a.href,
-            description:span.innerText
         };
     });
 };

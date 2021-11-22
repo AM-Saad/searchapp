@@ -1,11 +1,11 @@
-const puppeteer = require('puppeteer');
 const scrape = require('./scrape');
+const puppeteer = require('puppeteer');
 
-module.exports = async (query) => {
+module.exports = async (query) =>{
     const browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
-    })
+        args: ['--no-sandbox','--disable-setuid-sandbox']
+      })
     const page = await browser.newPage();
     await page.goto(`https://www.youtube.com/results?search_query=${query}`);
     await page.waitForSelector('#content');

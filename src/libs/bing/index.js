@@ -1,5 +1,5 @@
-const puppeteer = require('puppeteer');
 const scrape = require('./scrape');
+const puppeteer = require('puppeteer');
 
 module.exports = async (query) =>{
     const browser = await puppeteer.launch({

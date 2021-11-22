@@ -3,8 +3,8 @@ const youtubeSearch = require('../youtube');
 const bingSearch = require('../bing');
 const duckSearch = require('../duckduckgo');
 const yahooSearch = require('../yahoo');
-
 const search = async (query, queries) => {
+  
     let queriesArray = []
     if (queries.includes('youtube')) {
         queriesArray = [...queriesArray, youtubeSearch(query)]
@@ -16,7 +16,7 @@ const search = async (query, queries) => {
         queriesArray = [...queriesArray, bingSearch(query)]
     }
     if (queries.includes('duck')) {
-        queriesArray = [...queriesArray, duckSearch(query)]
+        queriesArray = [...queriesArray, duckSearch(quer)]
     }
     if (queries.includes('yahoo')) {
         queriesArray = [...queriesArray, yahooSearch(query)]
