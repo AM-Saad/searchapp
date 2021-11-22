@@ -19,6 +19,7 @@ app.get('/search/:query', async (req, res, next) => {
         return res.status(200).json(events)
 
     } catch (error) {
+        console.log(error)
         return res.status(500).json({ message: 'Something went worng.' })
     }
 
