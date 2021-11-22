@@ -6,24 +6,29 @@ const yahooSearch = require('../yahoo');
 
 const search = async (query, queries) => {
     let queriesArray = []
-    if(queries.includes('youtube')){
+    if (queries.includes('youtube')) {
         queriesArray = [...queriesArray, youtubeSearch(query)]
     }
-    if(queries.includes('google')){
+    if (queries.includes('google')) {
         queriesArray = [...queriesArray, googleSearch(query)]
     }
-    if(queries.includes('bing')){
+    if (queries.includes('bing')) {
         queriesArray = [...queriesArray, bingSearch(query)]
     }
-    if(queries.includes('duck')){
+    if (queries.includes('duck')) {
         queriesArray = [...queriesArray, duckSearch(query)]
     }
-    if(queries.includes('yahoo')){
+    if (queries.includes('yahoo')) {
         queriesArray = [...queriesArray, yahooSearch(query)]
     }
+    try {
 
-    const result = await Promise.all(queriesArray)
-    return result
+        const result = await Promise.all(queriesArray)
+        return result
+
+    } catch (error) {
+        throw error
+    }
 
 
 };
