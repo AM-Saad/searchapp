@@ -10,7 +10,9 @@
   "author": "Abdelrhamn Mohammed (AMS-Studio)",
   "license": "ISC",
   "dependencies": {
+    "@heroku/buildpack-registry": "^1.0.1",
     "body-parser": "^1.18.3",
+    "chromium": "^3.0.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "puppeteer": "^1.14.0"
