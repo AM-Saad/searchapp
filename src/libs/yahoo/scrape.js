@@ -2,9 +2,9 @@ const Event = require('../common/event');
 
 module.exports = async page => {
     try {
-        const news = await page.$eval('#center_col', parseNews);
-        console.log(2);
-        const events = news.map(e => Event('google', e.title, e.href));
+        const news = await page.$eval('#main', parseNews);
+        console.log(5);
+        const events = news.map(e => Event('yahoo', e.title, e.href, e.description));
         return events;
         
     } catch (error) {
@@ -15,13 +15,14 @@ module.exports = async page => {
 
 
 const parseNews = element => {
-    const articles = element.querySelectorAll('.g');
+    const articles = element.querySelectorAll('.relsrch');
     return Array.from(articles).map(e => {
         const a = e.querySelector('a');
-        const span = e.querySelector('.IsZvec');
+        const p = e.querySelector('.compText');
         return {
             title: a.text,
             href: a.href,
+            description:p.innerText 
         };
     });
 };

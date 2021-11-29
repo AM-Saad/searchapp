@@ -1,8 +1,9 @@
-const Event = (type, title, href, img,body) =>{
+const Event = (type, title, href, description, img,body) =>{
     return {
         type,
         title,
         href,
+        description,
         img,
         body
     };
